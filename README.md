@@ -1,0 +1,12 @@
+# UIAlertController
+前段时间，公司做个新项目，出现了alertsheet的兼容性问题。在网上找了一些资料，发现一般的处理方法是
+判断是否是iOS8之前的系统
+这里我参考了别人的一些方法，写出了此小插件
+UIViewController+WCAlert 是uiviewcontroller的一个分类，用于交换方法
+WCAlertAction
+WCAlertController 
+处理比较特殊，里面有一段汇编，也是精华所在。在汇编里面会先查找iOS系统中有没有UIAlert和UIAlertController类
+如果没有，就会使之继承自己写的WCAlertAction  WCAlertController类，
+其实在这里也就是实现了系统中UIAlert和UIAlertController的属性和方法
+
+在使用过程中可以之间使用UIAlertController,无需进行系统判断
